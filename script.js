@@ -3,7 +3,7 @@ function validarDados() {
     if (nome.value === ""){
         alert('Por favor, insira seu nome')
     } if(/[0-9]/g.test(nome.value)){
-        alert('Por favor, somente letras no seu nome')
+        alert('Por favor, somente letras no nome')
     } else {
         console.log(nome.value)
     }
@@ -12,7 +12,7 @@ function validarDados() {
     if (sobrenome.value === ""){
         alert('Por favor, insira seu sobrenome')
     } if(/[0-9]/g.test(sobrenome.value)){
-        alert('Por favor, somente letras no seu nome')
+        alert('Por favor, somente letras no sobrenome')
     } else {
         console.log(sobrenome.value)
     }
@@ -27,16 +27,19 @@ function validarDados() {
     }
 
     let cpf = document.getElementById('cpf')
-    let tamanhocpf = cpf.value
-    if (tamanhocpf.value < 14){
-        alert('CPF incorreto')
+    let cpfNumeros = cpf.value.replace('.', '');
+    cpfNumeros = cpfNumeros.replace('.','');
+    cpfNumeros = cpfNumeros.replace('-','');
+
+    const cpfRegex = /^\d{11}$/;
+    if (!cpfRegex.test(cpfNumeros)) {
+        alert('Por favor, insira um CPF em um formato válido');
     }
 
     let telefone = document.getElementById('telefone')
-    if (telefone.value != "") {
-        console.log(telefone.value)
-    } else{
-        alert('Por favor, insira seu telefone')
+    const telefoneRegex = /^\d{11}$/;
+    if (!telefoneRegex.test(telefone.value)) {
+        alert('Telefone deve conter 11 dígitos (DDD + número)');
     }
 
     let email = document.getElementById('email')

@@ -1,29 +1,59 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validação JavaScript Cadastro</title>
+    <title>Cadastro mecãnica</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome">
-    <br>
-    <label for="sobrenome">Sobrenome:</label>
-    <input type="text" name="sobrenome" id="sobrenome">
-    <br>
-    <label for="Idade">Idade:</label>
-    <input type="number" name="idade" id="idade">
-    <br>
-    <label for="cpf">CPF:</label>
-    <input type="text" name="cpf" id="cpf" maxlength="14">
-    <br>
-    <label for="telefone">Telefone:</label>
-    <input type="number" name="telefone" id="telefone" required>
-    <br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" required>
-    <br>
-    <button onclick="validarDados()">Enviar</button>
+    <header>
+    </header>
+    <main>
+        <div class="container">
+            <form id="formCadastro">
+                <h1>Cadastro Mecânica</h1>
+                <div class="form-section">
+                    <h2>Cadastro cliente</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" name="nome" placeholder="Pedro" id="nome" required>
+                            <br>
+                            <br>
+                            <label for="sobrenome">Sobrenome:</label>
+                            <input type="text" placeholder="Silva" name="sobrenome" id="sobrenome" required>
+                            <br>
+                            <br>
+                            <label for="Idade">Idade:</label>
+                            <input type="number" name="idade" placeholder="00" id="idade" required>
+                        </div>
+                        <br>
+                        <div class="formgroup">
+                            <label for="cpf">CPF:</label>
+                            <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" required>
+                            <br>
+                            <br>
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" name="telefone" id="telefone" placeholder="00000000000">
+                            <br>
+                            <br>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="pedrosilva@email.com" required>
+                        </div>
+                        <br>
+                    </div>
+                    <button onclick="validarDados()">Enviar Ordem</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+    </footer>
+
+
 </body>
+
 </html>
