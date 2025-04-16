@@ -4,8 +4,6 @@ function validarDados() {
         alert('Por favor, insira seu nome')
     } if(/[0-9]/g.test(nome.value)){
         alert('Por favor, somente letras no nome')
-    } else {
-        console.log(nome.value)
     }
 
     let sobrenome = document.getElementById('sobrenome')
@@ -13,8 +11,6 @@ function validarDados() {
         alert('Por favor, insira seu sobrenome')
     } if(/[0-9]/g.test(sobrenome.value)){
         alert('Por favor, somente letras no sobrenome')
-    } else {
-        console.log(sobrenome.value)
     }
 
     let idade = document.getElementById('idade')
@@ -22,8 +18,6 @@ function validarDados() {
         alert('Por favor, insira sua idade')
     } if(idade.value < 18){
         alert('É necessário ser maior de idade para se cadastrar')
-    } else {
-        console.log(idade.value)
     }
 
     let cpf = document.getElementById('cpf')
@@ -44,8 +38,6 @@ function validarDados() {
 
     let email = document.getElementById('email')
     if (email.value != "") {
-        console.log(email.value)
-    } else{
-        alert('Por favor, insira seu email')
+        alert('Por favor, insira seu email corretamente')
     }
 }

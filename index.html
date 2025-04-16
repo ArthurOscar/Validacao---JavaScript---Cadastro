@@ -45,8 +45,85 @@
                         </div>
                         <br>
                     </div>
-                    <button onclick="validarDados()">Enviar Ordem</button>
                 </div>
+            </form>
+            <form id="cadastro-veiculo">
+                <div class="form-section">
+                    <h2>Cadastro veículo</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="marca">Marca:</label>
+                            <input type="text" id="marca" placeholder="Fiat">
+                            <br>
+                            <br>
+                            <label for="modelo">Modelo:</label>
+                            <input type="text" id="modelo" placeholder="Uno">
+                            <br>
+                            <br>
+                            <label for="ano">Ano do veículo:</label>
+                            <input type="number" id="ano" placeholder="2000">
+                            <br>
+                            <br>
+                            <label>Tipo do veículo:</label>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="radio" name="tipo_veiculo" id="tipo1" value="Carro">
+                                    Carro
+                                </label>
+                                <label>
+                                    <input type="radio" name="tipo_veiculo" id="tipo2" value="caminhonete">
+                                    Caminhonete
+                                </label>
+                                <label>
+                                    <input type="radio" name="tipo_veiculo" id="tipo3" value="caminhão">
+                                    Caminhão
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="placa">Placa:</label>
+                            <input type="text" id="placa" placeholder="ABC2A23 ou ABC1234">
+                            <br>
+                            <br>
+                            <label for="peso">Data da compra:</label>
+                            <input type="month" id="data_compra">
+                            <br>
+                            <br>
+                            <label for="km-atual">Km rodado:</label>
+                            <input type="number" id="km_rodado" placeholder="999">
+                            <br>
+                            <br>
+                            <label for="tipo_gasolina">Tipo de combustivel:</label>
+                            <div class="checkbox-group2">
+                                <label>
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo1" value="Etanol">
+                                    Etanol
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo2" value="Gasolina">
+                                    Gasolina
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo3" value="Diesel">
+                                    Diesel
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo1" value="Biodiesel">
+                                    Biodiesel
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo2" value="GNV">
+                                    GNV
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo3" value="Eletricidade">
+                                    Eletricidade
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="validarDados()">Enviar Cadastro</button>
             </form>
         </div>
     </main>
