@@ -45,10 +45,10 @@ function validarDados() {
     //email
     let email = document.getElementById('email')
     console.log(email)
-    if (email === '') {
-        alert('Por favor, insira seu email corretamente')
-    } else {
+    if (email != '') {
         alert('Cadastro Cliente concluido')
+    } else {
+        alert('Insira o email do cliente')
     }
 
     //VEÍCULO
