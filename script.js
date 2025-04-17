@@ -47,7 +47,7 @@ function validarDados() {
     console.log(email)
     if (email === '') {
         alert('Por favor, insira seu email corretamente')
-    } if(email != '') {
+    } else {
         alert('Cadastro Cliente concluido')
     }
 
