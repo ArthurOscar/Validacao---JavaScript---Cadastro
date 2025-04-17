@@ -44,8 +44,7 @@ function validarDados() {
 
     //email
     let email = document.getElementById('email')
-    console.log(email)
-    if (email != '') {
+    if (email.value != '') {
         alert('Cadastro Cliente concluido')
     } else {
         alert('Insira o email do cliente')
