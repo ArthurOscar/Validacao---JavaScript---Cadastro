@@ -49,6 +49,4 @@ function validarDados() {
     } else {
         alert('Insira o email do cliente')
     }
-
-    //VEÍCULO
 }
