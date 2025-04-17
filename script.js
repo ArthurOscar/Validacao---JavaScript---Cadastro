@@ -44,8 +44,11 @@ function validarDados() {
 
     //email
     let email = document.getElementById('email')
-    if (email.value != "") {
+    console.log(email)
+    if (email === '') {
         alert('Por favor, insira seu email corretamente')
+    } if(email != '') {
+        alert('Cadastro Cliente concluido')
     }
 
     //VEÍCULO
