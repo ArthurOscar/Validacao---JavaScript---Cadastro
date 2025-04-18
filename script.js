@@ -32,6 +32,7 @@ telefone.addEventListener('keypress', () => {
 function validarDados() {
     //CLIENTE
     let validacao_cliente = true
+    
     //nome
     let nome = document.getElementById('nome')
     if (nome.value === "") {
@@ -79,7 +80,7 @@ function validarDados() {
     telefoneNumeros = telefoneNumeros.replace('-', '')
 
     const telefoneRegex = /^\d{11}$/;
-    if (!telefoneRegex.test(telefone.value)) {
+    if (!telefoneRegex.test(telefoneNumeros)) {
         alert('Telefone deve conter 11 dígitos (DDD + número)')
         validacao_cliente = false
     }
@@ -87,12 +88,11 @@ function validarDados() {
     //email
     let email = document.getElementById('email').value
     const emailValido = emailValidar(email)
-    if (emailValido) {
-        validacao_cliente = true
-    } else {
+    if (emailValido) {} else {
         alert('Insira corretamente o email cliente')
         validacao_cliente = false
     }
+
     //final
     if (validacao_cliente === true) {
         alert('Cadastro Concluido')
