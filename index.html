@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro mecânica</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="imagex/png" href="logo_site.png">
 </head>
@@ -34,11 +33,11 @@
                         <br>
                         <div class="formgroup">
                             <label for="cpf">CPF:</label>
-                            <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" required>
+                            <input type="text" autocomplete="off" id="cpf" placeholder="999.999.999-99" maxlength="14" required>
                             <br>
                             <br>
                             <label for="telefone">Telefone:</label>
-                            <input type="tel" name="telefone" id="telefone" placeholder="00000000000">
+                            <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" maxlength="14" required>
                             <br>
                             <br>
                             <label for="email">Email:</label>
@@ -130,8 +129,7 @@
     </main>
     <footer>
     </footer>
-
-
+<script src="script.js"></script>
 </body>
 
 </html>
