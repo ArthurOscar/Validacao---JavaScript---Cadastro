@@ -27,44 +27,46 @@
                             <input type="text" placeholder="Silva" name="sobrenome" id="sobrenome" required>
                             <br>
                             <br>
-                            <label for="Idade">Idade:</label>
+                            <label for="idade">Idade:</label>
                             <input type="number" name="idade" placeholder="00" id="idade" required>
                         </div>
                         <br>
-                        <div class="formgroup">
+                        <div class="form-group">
                             <label for="cpf">CPF:</label>
-                            <input type="text" autocomplete="off" id="cpf" placeholder="999.999.999-99" maxlength="14" required>
+                            <input type="text" autocomplete="off" id="cpf" name="cpf" placeholder="999.999.999-99" maxlength="14"
+                            required>
                             <br>
                             <br>
                             <label for="telefone">Telefone:</label>
-                            <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" maxlength="14" required>
+                            <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" maxlength="14"
+                            required>
                             <br>
                             <br>
                             <label for="email">Email:</label>
-                            <input type="email" name="email" id="email" placeholder="pedrosilva@email.com" required>
+                            <input type="email" name="email" autocomplete="off" id="email" placeholder="pedrosilva@email.com" required>
                         </div>
                         <br>
                     </div>
                 </div>
             </form>
-            <form id="cadastro-veiculo">
+            <form id="formCadastro">
                 <div class="form-section">
                     <h2>Cadastro veículo</h2>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="marca">Marca:</label>
-                            <input type="text" id="marca" placeholder="Fiat">
+                            <input type="text" name='marca' id="marca" placeholder="Fiat">
                             <br>
                             <br>
                             <label for="modelo">Modelo:</label>
-                            <input type="text" id="modelo" placeholder="Uno">
+                            <input type="text" name='modelo' id="modelo" placeholder="Uno">
                             <br>
                             <br>
                             <label for="ano">Ano do veículo:</label>
-                            <input type="number" id="ano" placeholder="2000">
+                            <input type="year" name='ano' id="ano" placeholder="2000" maxlength="4">
                             <br>
                             <br>
-                            <label>Tipo do veículo:</label>
+                            <label for="tipo1">Tipo do veículo:</label>
                             <div class="checkbox-group">
                                 <label>
                                     <input type="radio" name="tipo_veiculo" id="tipo1" value="Carro">
@@ -82,41 +84,42 @@
                         </div>
                         <div class="form-group">
                             <label for="placa">Placa:</label>
-                            <input type="text" id="placa" placeholder="ABC2A23 ou ABC1234">
+                            <input type="text" id="placa" placeholder="ABC2A23 ou ABC1234" maxlength="7">
                             <br>
                             <br>
-                            <label for="peso">Data da compra:</label>
+                            <label for="data_compra">Data da compra:</label>
                             <input type="month" id="data_compra">
                             <br>
                             <br>
-                            <label for="km-atual">Km rodado:</label>
+                            <label for="km_rodado">Km rodado:</label>
                             <input type="number" id="km_rodado" placeholder="999">
                             <br>
                             <br>
-                            <label for="tipo_gasolina">Tipo de combustivel:</label>
+                            <label for="tipo_gasolina1">Tipo de combustivel:</label>
                             <div class="checkbox-group2">
                                 <label>
-                                    <input type="checkbox" name="tipo_gasolina" id="tipo1" value="Etanol">
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo_gasolina1" value="Etanol">
                                     Etanol
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="tipo_gasolina" id="tipo2" value="Gasolina">
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo_gasolina2" value="Gasolina">
                                     Gasolina
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="tipo_gasolina" id="tipo3" value="Diesel">
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo_gasolina3" value="Diesel">
                                     Diesel
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="tipo_gasolina" id="tipo1" value="Biodiesel">
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo_gasolina4" value="Biodiesel">
                                     Biodiesel
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="tipo_gasolina" id="tipo2" value="GNV">
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo_gasolina5" value="GNV">
                                     GNV
                                 </label>
                                 <label>
-                                    <input type="checkbox" name="tipo_gasolina" id="tipo3" value="Eletricidade">
+                                    <input type="checkbox" name="tipo_gasolina" id="tipo_gasolina6"
+                                    value="Eletricidade">
                                     Eletricidade
                                 </label>
                             </div>
@@ -129,7 +132,7 @@
     </main>
     <footer>
     </footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

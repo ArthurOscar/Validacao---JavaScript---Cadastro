@@ -78,13 +78,13 @@ function validarDados() {
     let telefoneNumeros = telefone.value.replace('(', '')
     telefoneNumeros = telefoneNumeros.replace(')', '')
     telefoneNumeros = telefoneNumeros.replace('-', '')
-
+    
     const telefoneRegex = /^\d{11}$/;
     if (!telefoneRegex.test(telefoneNumeros)) {
         alert('Telefone deve conter 11 dígitos (DDD + número)')
         validacao_cliente = false
     }
-
+    
     //email
     let email = document.getElementById('email').value
     const emailValido = emailValidar(email)
@@ -92,10 +92,77 @@ function validarDados() {
         alert('Insira corretamente o email cliente')
         validacao_cliente = false
     }
+    
+    //Cadastro veiculo
+    let validacao_veiculo = true
+    
+    //Marca
+    let marca = document.querySelector('#marca')
+    if (marca.value === "") {
+        alert('Insira a marca do veículo')
+        validacao_veiculo = false
+    } else if (/[0-9]/g.test(marca.value)) {
+        alert('Somente letras na marca do veículo')
+        validacao_veiculo = false
+    }
+    
+    //Modelo
+    let modelo = document.querySelector('#modelo')
+    if (modelo.value === '') {
+        alert('Insira o modelo do veículo')
+        validacao_veiculo = false
+    }
+        
+    //Ano
+    let ano = document.querySelector('#ano')
+    if (ano.value === "") {
+        alert('Insira o ano do veículo')
+        validacao_veiculo = false
+    } else if (ano.value < 1950) {
+        alert('Somente veículos acima de 1950')
+        validacao_veiculo = false
+    }
 
-    //final
-    if (validacao_cliente === true) {
-        alert('Cadastro Concluido')
+    //Tipo veiculo
+    for (let i = 0; i < 3; i++){
+        let tipo = document.querySelector('#tipo'[i]).value
+        if (tipo[i] === '') {
+            alert('Selecione o tipo de veículo')
+            validacao_veiculo = false
+        };
+    }
+    
+    //placa
+    let placa_veiculo = document.querySelector('#placa')
+    if((placa_veiculo === '') || (placa_veiculo < 7)){
+        alert('Insira corretamente a placa do veículo')
+    } 
+
+    //data da compra
+    let data = document.querySelector('#data_compra')
+    console.log(data.value)
+    if (data.value === '') {
+        alert('Insire a data de compra')
+        validacao_veiculo = false
+    }
+    
+    //km rodado
+    let km_rodado = document.querySelector('#km_rodado')
+    if (km_rodado === '') {
+        alert('Insira os Km rodados')
+        validacao_veiculo = false
+    } else if ((/[a-z]/g.test(km_rodado.value))) {
+        alert('Somente números nos km rodados')
+        validacao_veiculo = false
+    }
+    
+    //Tipo de combustivel
+    for (i = 0; i < 6; i++){
+        let tipo_gasolina = document.querySelector('#tipo_gasolina'[i]).value
+        if (tipo[i] === '') {
+            alert('Selecione o tipo de combustivel do veículo')
+            validacao_veiculo = false
+        };
     }
 }
 
