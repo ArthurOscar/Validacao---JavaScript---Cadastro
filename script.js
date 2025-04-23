@@ -6,7 +6,7 @@ cpf.addEventListener('keypress', () => {
 
     if (cpfLength == 3 || cpfLength == 7) {
         cpf.value += '.'
-    }else if (cpfLength == 11) {
+    } else if (cpfLength == 11) {
         cpf.value += '-'
     }
 })
@@ -17,12 +17,12 @@ let telefone = document.querySelector('#telefone')
 
 telefone.addEventListener('keypress', () => {
     let telefonelength = telefone.value.length
-    
-    if (telefonelength == 0){
+
+    if (telefonelength == 0) {
         telefone.value += '('
-    } if (telefonelength == 3){
+    } if (telefonelength == 3) {
         telefone.value += ')'
-    } else if(telefonelength == 9){
+    } else if (telefonelength == 9) {
         telefone.value += '-'
     }
 })
@@ -32,7 +32,7 @@ telefone.addEventListener('keypress', () => {
 function validarDados() {
     //CLIENTE
     let validacao_cliente = true
-    
+
     //nome
     let nome = document.getElementById('nome')
     if (nome.value === "") {
@@ -68,7 +68,7 @@ function validarDados() {
     cpfNumeros = cpfNumeros.replace('.', '')
     cpfNumeros = cpfNumeros.replace('-', '')
 
-    const cpfRegex = /^\d{11}$/;
+    const cpfRegex = /^\d{11}$/
     if (!cpfRegex.test(cpfNumeros)) {
         alert('Por favor, insira um CPF em um formato válido')
         validacao_cliente = false
@@ -78,24 +78,24 @@ function validarDados() {
     let telefoneNumeros = telefone.value.replace('(', '')
     telefoneNumeros = telefoneNumeros.replace(')', '')
     telefoneNumeros = telefoneNumeros.replace('-', '')
-    
-    const telefoneRegex = /^\d{11}$/;
+
+    const telefoneRegex = /^\d{11}$/
     if (!telefoneRegex.test(telefoneNumeros)) {
         alert('Telefone deve conter 11 dígitos (DDD + número)')
         validacao_cliente = false
     }
-    
+
     //email
     let email = document.getElementById('email').value
     const emailValido = emailValidar(email)
-    if (emailValido) {} else {
+    if (emailValido) { } else {
         alert('Insira corretamente o email cliente')
         validacao_cliente = false
     }
-    
+
     //Cadastro veiculo
     let validacao_veiculo = true
-    
+
     //Marca
     let marca = document.querySelector('#marca')
     if (marca.value === "") {
@@ -105,14 +105,14 @@ function validarDados() {
         alert('Somente letras na marca do veículo')
         validacao_veiculo = false
     }
-    
+
     //Modelo
     let modelo = document.querySelector('#modelo')
     if (modelo.value === '') {
         alert('Insira o modelo do veículo')
         validacao_veiculo = false
     }
-        
+
     //Ano
     let ano = document.querySelector('#ano')
     if (ano.value === "") {
@@ -124,45 +124,57 @@ function validarDados() {
     }
 
     //Tipo veiculo
-    for (let i = 0; i < 3; i++){
-        let tipo = document.querySelector('#tipo'[i]).value
-        if (tipo[i] === '') {
-            alert('Selecione o tipo de veículo')
-            validacao_veiculo = false
-        };
+    let tipo_veiculo = document.querySelector('input[name="tipo_veiculo"]:checked')
+    if (!tipo_veiculo) {
+        alert('Selecione o tipo de veículo')
+        validacao_veiculo = false
     }
-    
+
     //placa
     let placa_veiculo = document.querySelector('#placa')
-    if((placa_veiculo === '') || (placa_veiculo < 7)){
-        alert('Insira corretamente a placa do veículo')
-    } 
+    if (placa_veiculo.value === '') {
+        alert('Insira a placa do veículo')
+        validacao_veiculo = false
+    } else if (placa_veiculo.value.length < 7) {
+        alert('A placa deve ter 7 caracteres')
+        validacao_veiculo = false
+    } else if (/[a-z]/.test(placa_veiculo.value)) {
+        alert('A placa não pode conter letras minúsculas - use apenas MAIÚSCULAS')
+        validacao_veiculo = false
+    }
 
     //data da compra
     let data = document.querySelector('#data_compra')
-    console.log(data.value)
     if (data.value === '') {
         alert('Insire a data de compra')
         validacao_veiculo = false
+    } else if (data.value < ano.value) {
+        alert('Data de compra incorreta, compra antes do ano de lançamento do veículo')
+        validacao_veiculo = false
     }
-    
+
     //km rodado
-    let km_rodado = document.querySelector('#km_rodado')
+    let km_rodado = document.querySelector('#km_rodado').value
     if (km_rodado === '') {
         alert('Insira os Km rodados')
         validacao_veiculo = false
-    } else if ((/[a-z]/g.test(km_rodado.value))) {
-        alert('Somente números nos km rodados')
-        validacao_veiculo = false
     }
-    
+
     //Tipo de combustivel
-    for (i = 0; i < 6; i++){
-        let tipo_gasolina = document.querySelector('#tipo_gasolina'[i]).value
-        if (tipo[i] === '') {
+        let tipo_gasolina = document.querySelector('input[name="tipo_gasolina"]:checked')
+        if (tipo_gasolina === null) {
             alert('Selecione o tipo de combustivel do veículo')
             validacao_veiculo = false
-        };
+        }
+
+    //Validação Cliente e veiculo
+    if (validacao_cliente === false) {
+        alert('Por favor, verifique os campos do cadastro do cliente')
+    } else if (validacao_veiculo === false) {
+        alert('Por favor, verifique os campos do cadastro do veículo')
+    } else {
+        alert('Cadastro concluido')
+        location.reload()
     }
 }
 
