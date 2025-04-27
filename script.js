@@ -202,11 +202,14 @@ function validarDados() {
         validacao_servico = false
     }
 
+    console.log(validacao_servico)
     //Validação final
     if (validacao_cliente === false) {
         alert('Por favor, verifique os campos do cadastro do cliente')
     } if (validacao_veiculo === false) {
         alert('Por favor, verifique os campos do cadastro do veículo')
+    } if (validacao_servico === false){
+        alert('Por favor, verifique os campos do serviço desejado')
     } else {
         alert('Cadastro concluido')
         location.reload()
