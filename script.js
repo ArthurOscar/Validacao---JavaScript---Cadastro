@@ -29,32 +29,27 @@ telefone.addEventListener('keypress', () => {
 
 //Calcular Valor
 function calcularValor() {
-    if (document.querySelector('#tipo').value === ('carro') || document.querySelector('input[name="tipo_servico"]:checked').value === ('pintura')){
-        document.querySelector("#valor").value = "R$" + 200.00;
-    } if (document.querySelector('#tipo').value === ('carro') || document.querySelector('input[name="tipo_servico"]:checked').value === ('limpeza')){
-        document.querySelector("#valor").value = "R$" + 100.00;
-    } if (document.querySelector('#tipo').value === ('carro') || document.querySelector('input[name="tipo_servico"]:checked').value === ('revisão')){
-        document.querySelector("#valor").value = "R$" + 150.00;
-    } if (document.querySelector('#tipo').value === ('carro') || document.querySelector('input[name="tipo_servico"]:checked').value === ('conserto')){
-        document.querySelector("#valor").value = "R$" + 300.00;
-    } if (document.querySelector('#tipo').value === ('Caminhão') || document.querySelector('input[name="tipo_servico"]:checked').value === ('pintura')){
-        document.querySelector("#valor").value = "R$" + 300.00;
-    } if (document.querySelector('#tipo').value === ('Caminhão') || document.querySelector('input[name="tipo_servico"]:checked').value === ('limpeza')){
-        document.querySelector("#valor").value = "R$" + 400.00;
-    } if (document.querySelector('#tipo').value === ('Caminhão') || document.querySelector('input[name="tipo_servico"]:checked').value === ('revisão')){
-        document.querySelector("#valor").value = "R$" + 456.00;
-    } if (document.querySelector('#tipo').value === ('Caminhão') || document.querySelector('input[name="tipo_servico"]:checked').value === ('conserto')){
-        document.querySelector("#valor").value = "R$" + 390.00;
-    } if (document.querySelector('#tipo').value === ('Caminhote') || document.querySelector('input[name="tipo_servico"]:checked').value === ('pintura')){
-        document.querySelector("#valor").value = "R$" + 450.00;
-    } if (document.querySelector('#tipo').value === ('Caminhote') || document.querySelector('input[name="tipo_servico"]:checked').value === ('limpeza')){
-        document.querySelector("#valor").value = "R$" + 670.00;
-    } if (document.querySelector('#tipo').value === ('Caminhote') || document.querySelector('input[name="tipo_servico"]:checked').value === ('revisão')){
-        document.querySelector("#valor").value = "R$" + 299.00;
-    } if (document.querySelector('#tipo').value === ('Caminhote') || document.querySelector('input[name="tipo_servico"]:checked').value === ('conserto')){
-        document.querySelector("#valor").value = "R$" + 223.00;
-    }
-  }
+    const tipoVeiculo = document.querySelector('input[name="tipo_veiculo"]:checked').value;
+    const tipoServico = document.querySelector('input[name="tipo_servico"]:checked').value;
+    let valor = 0;
+
+    if (tipoVeiculo === 'carro' && tipoServico === 'pintura') valor = 200;
+    else if (tipoVeiculo === 'carro' && tipoServico === 'limpeza') valor = 100;
+    else if (tipoVeiculo === 'carro' && tipoServico === 'revisão') valor = 150;
+    else if (tipoVeiculo === 'carro' && tipoServico === 'conserto') valor = 300;
+
+    else if (tipoVeiculo === 'Caminhonete' && tipoServico === 'pintura') valor = 450;
+    else if (tipoVeiculo === 'Caminhonete' && tipoServico === 'limpeza') valor = 670;
+    else if (tipoVeiculo === 'Caminhonete' && tipoServico === 'revisão') valor = 299;
+    else if (tipoVeiculo === 'Caminhonete' && tipoServico === 'conserto') valor = 223;
+
+    else if (tipoVeiculo === 'Caminhão' && tipoServico === 'pintura') valor = 300;
+    else if (tipoVeiculo === 'Caminhão' && tipoServico === 'limpeza') valor = 400;
+    else if (tipoVeiculo === 'Caminhão' && tipoServico === 'revisão') valor = 456;
+    else if (tipoVeiculo === 'Caminhão' && tipoServico === 'conserto') valor = 390;
+
+    document.querySelector("#valor").value = "R$" + valor.toFixed(2);
+}
 
 
 //Validação
@@ -190,33 +185,33 @@ function validarDados() {
     }
 
     //Tipo de combustivel
-        let tipo_gasolina = document.querySelector('input[name="tipo_gasolina"]:checked')
-        if (tipo_gasolina === null) {
-            alert('Selecione o tipo de combustivel do veículo')
-            validacao_veiculo = false
-        }
-
-        
-        //Tipo de serviço
-        let validacao_servico = true
-        
-        //Tipo de servico
-        let tipo_servico = document.querySelector('input[name="tipo_servico"]:checked')
-        if (!tipo_servico) {
-            alert('Selecione o tipo de serviço')
-            validacao_servico = false
-        }
-
-        //Validação final
-        if (validacao_cliente === false) {
-            alert('Por favor, verifique os campos do cadastro do cliente')
-        } if (validacao_veiculo === false) {
-            alert('Por favor, verifique os campos do cadastro do veículo')
-        } else {
-            alert('Cadastro concluido')
-            location.reload()
-        }
+    let tipo_gasolina = document.querySelector('input[name="tipo_gasolina"]:checked')
+    if (tipo_gasolina === null) {
+        alert('Selecione o tipo de combustivel do veículo')
+        validacao_veiculo = false
     }
+
+
+    //Tipo de serviço
+    let validacao_servico = true
+
+    //Tipo de servico
+    let tipo_servico = document.querySelector('input[name="tipo_servico"]:checked')
+    if (!tipo_servico) {
+        alert('Selecione o tipo de serviço')
+        validacao_servico = false
+    }
+
+    //Validação final
+    if (validacao_cliente === false) {
+        alert('Por favor, verifique os campos do cadastro do cliente')
+    } if (validacao_veiculo === false) {
+        alert('Por favor, verifique os campos do cadastro do veículo')
+    } else {
+        alert('Cadastro concluido')
+        location.reload()
+    }
+}
 
 //Email formato correto
 const emailValidar = (email) => {
