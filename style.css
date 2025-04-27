@@ -123,6 +123,7 @@ button:hover {
     border-radius: 5px;
     border-width: 2px;
     height: 23px;
+    justify-content: center;
 }
 
 .checkbox-group input {
@@ -144,6 +145,21 @@ button:hover {
 
 .checkbox-group2 label {
     display: flex;
+}
+
+.checkbox-group3 {
+    padding: 10px;
+    border-style: solid;
+    border-color: #bdc3c7;
+    border-radius: 5px;
+    border-width: 2px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.checkbox-group3 input {
+    margin-top: 10px;
+    width: auto;
 }
 
 #enviar_cadastro{

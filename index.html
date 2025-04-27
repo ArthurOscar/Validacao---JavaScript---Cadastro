@@ -33,17 +33,18 @@
                         <br>
                         <div class="form-group">
                             <label for="cpf">CPF:</label>
-                            <input type="text" autocomplete="off" id="cpf" name="cpf" placeholder="999.999.999-99" maxlength="14"
-                            required>
+                            <input type="text" autocomplete="off" id="cpf" name="cpf" placeholder="999.999.999-99"
+                                maxlength="14" required>
                             <br>
                             <br>
                             <label for="telefone">Telefone:</label>
                             <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" maxlength="14"
-                            required>
+                                required>
                             <br>
                             <br>
                             <label for="email">Email:</label>
-                            <input type="email" name="email" autocomplete="off" id="email" placeholder="pedrosilva@email.com" required>
+                            <input type="email" name="email" autocomplete="off" id="email"
+                                placeholder="pedrosilva@email.com" required>
                         </div>
                         <br>
                     </div>
@@ -69,7 +70,7 @@
                             <label for="tipo1">Tipo do veículo:</label>
                             <div class="checkbox-group">
                                 <label>
-                                    <input type="radio" name="tipo_veiculo" id="tipo" value="Carro">
+                                    <input type="radio" name="tipo_veiculo" id="tipo" value="carro">
                                     Carro
                                 </label>
                                 <label>
@@ -125,9 +126,41 @@
                         </div>
                     </div>
                 </div>
+                <div id="formCadastro">
+                    <div class="form-section">
+                        <h2>Tipo de serviço</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tipo_servico">Tipo de serviço:</label>
+                                <div class="checkbox-group3">
+                                    <label>
+                                        <input type="radio" name="tipo_servico" id="tipo_servico" value="pintura">
+                                        Pintura
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo_servico" id="tipo_servico" value="limpeza">
+                                        Limpeza
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo_servico" id="tipo_servico" value="revisão">
+                                        Revisão
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="tipo_servico" id="tipo_servico" value="conserto">
+                                        Conserto
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="valor_servico">Valor do serviço:</label>
+                                <input type="text" id="valor" name="valor" value="">
+                                <button onclick="calcularValor()">Calcular</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <button onclick="validarDados()">Enviar Cadastro</button>
             </div>
-        </div>
     </main>
     <footer>
     </footer>
